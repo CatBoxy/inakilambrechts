@@ -1,4 +1,4 @@
-import { postBySlugQuery } from '../../lib/queries'
+import { photoBySlugQuery } from '../../lib/queries'
 import { previewClient } from '../../lib/sanity.server'
 
 function redirectToPreview(res, Location) {
@@ -24,17 +24,17 @@ export default async function preview(req, res) {
     return redirectToPreview(res, '/')
   }
 
-  // Check if the post with the given `slug` exists
-  const post = await previewClient.fetch(postBySlugQuery, {
+  // Check if the photo with the given `slug` exists
+  const photo = await previewClient.fetch(photoBySlugQuery, {
     slug: req.query.slug,
   })
 
   // If the slug doesn't exist prevent preview mode from being enabled
-  if (!post) {
+  if (!photo) {
     return res.status(401).json({ message: 'Invalid slug' })
   }
 
-  // Redirect to the path from the fetched post
+  // Redirect to the path from the fetched photo
   // We don't redirect to req.query.slug as that might lead to open redirect vulnerabilities
-  redirectToPreview(res, `/posts/${post.slug}`)
+  redirectToPreview(res, `/posts/${photo.slug}`)
 }
