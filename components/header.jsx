@@ -7,7 +7,7 @@ import { Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerOverlay, us
 import Link from 'next/link';
 
 
-export const Header = () => {
+const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const router = useRouter();
   const location = router.pathname;
@@ -66,3 +66,5 @@ export const Header = () => {
     </>
   );
 };
+
+export default Header;
