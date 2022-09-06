@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../components/header';
 import Layout from '../components/layout';
 import { Grid, ImgWrapperModal } from '../styles/GridStyles';
 import Image from 'next/image';
 import { Modal, ModalBody, ModalCloseButton, ModalContent, ModalOverlay, useDisclosure } from '@chakra-ui/react';
-
+import { IconChevronLeft, IconChevronRight } from '@tabler/icons';
 // import { CMS_NAME } from '../lib/constants'
 import { indexQuery } from '../lib/queries'
 import { usePreviewSubscription } from '../lib/sanity'
@@ -14,11 +14,13 @@ import { urlForImage } from '../lib/sanity'
 
 const Photo = ({ allPhotos: initialAllPhotos, preview }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [currentImg, setCurrentImg] = useState();
+  const [currentImgUrl, setCurrentImgUrl] = useState();
+  const [currentPhoto, setCurrentPhoto] = useState();
 
   function onClickHandler(photo) {
-    onOpen()
-    setCurrentImg(urlForImage(photo.coverImage).url());
+    onOpen();
+    setCurrentImgUrl(urlForImage(photo.coverImage).url());
+    setCurrentPhoto(photo);
   }
 
   const { data: allPhotos } = usePreviewSubscription(indexQuery, {
@@ -70,10 +72,11 @@ const Photo = ({ allPhotos: initialAllPhotos, preview }) => {
             <ImgWrapperModal >
 
               <div>
-                <Image src={currentImg} layout='responsive' width='100%' height='51%' quality='100' alt='' />
+                <Image src={currentImgUrl} layout='responsive' width='100%' height='51%' quality='100' alt='' />
               </div>
 
             </ImgWrapperModal>
+
           </ModalBody>
         </ModalContent>
       </Modal>
