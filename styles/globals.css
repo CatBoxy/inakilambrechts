@@ -1,0 +1,33 @@
+@import url("../public/fonts/stylesheet.css");
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Brandon Grotesque', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.chakra-portal {
+  z-index: 5;
+  position: absolute;
+}
+
+p {
+  margin: 0;
+}

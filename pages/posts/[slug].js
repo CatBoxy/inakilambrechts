@@ -10,17 +10,17 @@ import SectionSeparator from '../../components/section-separator'
 import Layout from '../../components/layout'
 import PostTitle from '../../components/post-title'
 import { CMS_NAME } from '../../lib/constants'
-import { postQuery, postSlugsQuery } from '../../lib/queries'
+import { photoQuery, photoSlugsQuery } from '../../lib/queries'
 import { urlForImage, usePreviewSubscription } from '../../lib/sanity'
 import { sanityClient, getClient, overlayDrafts } from '../../lib/sanity.server'
 
 export default function Post({ data = {}, preview }) {
   const router = useRouter()
 
-  const slug = data?.post?.slug
+  const slug = data?.photo?.slug
   const {
-    data: { post, morePosts },
-  } = usePreviewSubscription(postQuery, {
+    data: { photo, morePhotos },
+  } = usePreviewSubscription(photoQuery, {
     params: { slug },
     initialData: data,
     enabled: preview && slug,
@@ -41,13 +41,13 @@ export default function Post({ data = {}, preview }) {
             <article>
               <Head>
                 <title>
-                  {post.title} | Next.js Blog Example with {CMS_NAME}
+                  {photo.title} | Next.js Blog Example with {CMS_NAME}
                 </title>
-                {post.coverImage?.asset?._ref && (
+                {photo.coverImage?.asset?._ref && (
                   <meta
                     key="ogImage"
                     property="og:image"
-                    content={urlForImage(post.coverImage)
+                    content={urlForImage(photo.coverImage)
                       .width(1200)
                       .height(627)
                       .fit('crop')
@@ -56,15 +56,15 @@ export default function Post({ data = {}, preview }) {
                 )}
               </Head>
               <PostHeader
-                title={post.title}
-                coverImage={post.coverImage}
-                date={post.date}
-                author={post.author}
+                title={photo.title}
+                coverImage={photo.coverImage}
+                date={photo.date}
+                author={photo.author}
               />
-              <PostBody content={post.content} />
+              <PostBody content={photo.content} />
             </article>
             <SectionSeparator />
-            {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+            {morePhotos.length > 0 && <MoreStories photos={morePhotos} />}
           </>
         )}
       </Container>
@@ -73,7 +73,7 @@ export default function Post({ data = {}, preview }) {
 }
 
 export async function getStaticProps({ params, preview = false }) {
-  const { post, morePosts } = await getClient(preview).fetch(postQuery, {
+  const { photo, morePhotos } = await getClient(preview).fetch(photoQuery, {
     slug: params.slug,
   })
 
@@ -81,8 +81,8 @@ export async function getStaticProps({ params, preview = false }) {
     props: {
       preview,
       data: {
-        post,
-        morePosts: overlayDrafts(morePosts),
+        photo,
+        morePhotos: overlayDrafts(morePhotos),
       },
     },
     // If webhooks isn't setup then attempt to re-generate in 1 minute intervals
@@ -91,7 +91,7 @@ export async function getStaticProps({ params, preview = false }) {
 }
 
 export async function getStaticPaths() {
-  const paths = await sanityClient.fetch(postSlugsQuery)
+  const paths = await sanityClient.fetch(photoSlugsQuery)
   return {
     paths: paths.map((slug) => ({ params: { slug } })),
     fallback: true,

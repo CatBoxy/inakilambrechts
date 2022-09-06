@@ -9,12 +9,12 @@ import { indexQuery } from '../lib/queries'
 import { usePreviewSubscription } from '../lib/sanity'
 import { getClient, overlayDrafts } from '../lib/sanity.server'
 
-export default function Index({ allPosts: initialAllPosts, preview }) {
-  const { data: allPosts } = usePreviewSubscription(indexQuery, {
-    initialData: initialAllPosts,
+export default function Index({ allPhotos: initialAllPhotos, preview }) {
+  const { data: allPhotos } = usePreviewSubscription(indexQuery, {
+    initialData: initialAllPhotos,
     enabled: preview,
   })
-  const [heroPost, ...morePosts] = allPosts || []
+  const [heroPhoto, ...morePhotos] = allPhotos || []
   return (
     <>
       <Layout preview={preview}>
@@ -23,17 +23,17 @@ export default function Index({ allPosts: initialAllPosts, preview }) {
         </Head>
         <Container>
           <Intro />
-          {heroPost && (
+          {heroPhoto && (
             <HeroPost
-              title={heroPost.title}
-              coverImage={heroPost.coverImage}
-              date={heroPost.date}
-              author={heroPost.author}
-              slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
+              title={heroPhoto.title}
+              coverImage={heroPhoto.coverImage}
+              date={heroPhoto.date}
+              author={heroPhoto.author}
+              slug={heroPhoto.slug}
+              excerpt={heroPhoto.excerpt}
             />
           )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+          {morePhotos.length > 0 && <MoreStories photos={morePhotos} />}
         </Container>
       </Layout>
     </>
@@ -41,9 +41,9 @@ export default function Index({ allPosts: initialAllPosts, preview }) {
 }
 
 export async function getStaticProps({ preview = false }) {
-  const allPosts = overlayDrafts(await getClient(preview).fetch(indexQuery))
+  const allPhotos = overlayDrafts(await getClient(preview).fetch(indexQuery))
   return {
-    props: { allPosts, preview },
+    props: { allPhotos, preview },
     // If webhooks isn't setup then attempt to re-generate in 1 minute intervals
     revalidate: process.env.SANITY_REVALIDATE_SECRET ? undefined : 60,
   }
