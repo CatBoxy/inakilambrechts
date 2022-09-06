@@ -36,7 +36,7 @@ export const Header = () => {
             >
               <DrawerOverlay />
               <DrawerContent style={{ color: 'white', height: '100%', backgroundColor: 'black' }}>
-                <DrawerCloseButton style={{ color: 'white', border: '0', backgroundColor: 'transparent', position: 'absolute', top: '16px', right: '16px' }} />
+                <DrawerCloseButton style={{ color: 'white', border: '0', backgroundColor: 'transparent', position: 'absolute', top: '38px', right: '46px', width: '28px' }} />
                 <DrawerBody>
                   <ListWrapper >
                     <ul >

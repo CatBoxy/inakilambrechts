@@ -24,7 +24,7 @@ const Photo = ({ allPhotos: initialAllPhotos, preview }) => {
   const [...morePhotos] = allPhotos || []
 
   return (
-    <div style={{ backgroundColor: 'black' }}>
+    <div style={{ backgroundColor: 'black', height: '100vh' }}>
       <Layout height='88px' sticky={true}>
         <Header />
       </Layout>
@@ -44,7 +44,7 @@ const Photo = ({ allPhotos: initialAllPhotos, preview }) => {
             ))}
         </Grid>
       </Layout>
-      {/* <Modal onClose={onClose} size={'full'} isOpen={isOpen}>
+      <Modal onClose={onClose} size={'full'} isOpen={isOpen}>
         <ModalOverlay />
         <ModalContent style={{ color: 'white', height: '100%', width: '100%', backgroundColor: 'black' }}>
           <ModalCloseButton
@@ -56,7 +56,10 @@ const Photo = ({ allPhotos: initialAllPhotos, preview }) => {
               top: '33px',
               right: '33px',
               zIndex: '2',
-              cursor: 'pointer'
+              cursor: 'pointer',
+              top: '38px',
+              right: '46px',
+              width: '28px'
             }} />
           <ModalBody>
             <ImgWrapperModal >
@@ -68,7 +71,7 @@ const Photo = ({ allPhotos: initialAllPhotos, preview }) => {
             </ImgWrapperModal>
           </ModalBody>
         </ModalContent>
-      </Modal> */}
+      </Modal>
     </div >
   );
 };

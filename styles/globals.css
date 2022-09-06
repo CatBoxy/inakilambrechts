@@ -31,3 +31,9 @@ ul {
 p {
   margin: 0;
 }
+
+#__next {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
