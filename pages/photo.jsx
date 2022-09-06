@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header } from '../components/header';
+import Header from '../components/header';
 import Layout from '../components/layout';
 import { Grid, ImgWrapperModal } from '../styles/GridStyles';
 import Image from 'next/image';

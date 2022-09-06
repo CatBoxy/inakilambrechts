@@ -1,4 +1,4 @@
-import { Header } from '../components/header';
+import Header from '../components/header';
 import { AboutBody } from '../styles/AboutStyles';
 import Image from 'next/image';
 import ImgSrc from '../public/filmic-shot1.jpg';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header } from '../components/header';
+import Header from '../components/header';
 import Layout from '../components/layout';
 import Image from 'next/image';
 import ImgSrc from '../public/filmic-shot2.jpg';
