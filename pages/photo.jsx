@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../components/header';
 import Layout from '../components/layout';
 import { Grid, ImgWrapperModal } from '../styles/GridStyles';
 import Image from 'next/image';
-import ImgSrc from '../public/filmic-shot2.jpg';
 import { Modal, ModalBody, ModalCloseButton, ModalContent, ModalOverlay, useDisclosure } from '@chakra-ui/react';
 
 // import { CMS_NAME } from '../lib/constants'
@@ -15,6 +14,12 @@ import { urlForImage } from '../lib/sanity'
 
 const Photo = ({ allPhotos: initialAllPhotos, preview }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [currentImg, setCurrentImg] = useState();
+
+  function onClickHandler(photo) {
+    onOpen()
+    setCurrentImg(urlForImage(photo.coverImage).url());
+  }
 
   const { data: allPhotos } = usePreviewSubscription(indexQuery, {
     initialData: initialAllPhotos,
@@ -32,7 +37,7 @@ const Photo = ({ allPhotos: initialAllPhotos, preview }) => {
         <Grid>
           {morePhotos.length > 0 &&
             morePhotos.map((photo) => (
-              <div key={photo.slug} onClick={onOpen}>
+              <div key={photo.slug} onClick={() => onClickHandler(photo)}>
                 <Image
                   src={urlForImage(photo.coverImage).url()}
                   layout='fill'
@@ -44,28 +49,28 @@ const Photo = ({ allPhotos: initialAllPhotos, preview }) => {
             ))}
         </Grid>
       </Layout>
-      <Modal onClose={onClose} size={'full'} isOpen={isOpen}>
+      <Modal onClose={onClose} size={'full'} isOpen={isOpen} >
         <ModalOverlay />
-        <ModalContent style={{ color: 'white', height: '100%', width: '100%', backgroundColor: 'black' }}>
+        <ModalContent style={{ color: 'white', backgroundColor: 'black', height: '100vh', display: 'flex', alignItems: 'center' }}>
           <ModalCloseButton
             style={{
               color: 'white',
               border: 'none',
               backgroundColor: 'transparent',
               position: 'absolute',
-              top: '33px',
-              right: '33px',
               zIndex: '2',
               cursor: 'pointer',
+              width: '28px',
+              height: '28px',
               top: '38px',
               right: '46px',
-              width: '28px'
+              mixBlendMode: 'difference'
             }} />
-          <ModalBody>
+          <ModalBody style={{ height: '100%', display: 'flex', alignItems: 'center' }}>
             <ImgWrapperModal >
 
               <div>
-                <Image src={ImgSrc} layout='responsive' placeholder='blur' quality='100' alt='' />
+                <Image src={currentImg} layout='responsive' width='100%' height='51%' quality='100' alt='' />
               </div>
 
             </ImgWrapperModal>

@@ -25,15 +25,16 @@ ul {
 
 .chakra-portal {
   z-index: 5;
-  position: absolute;
+  position: fixed;
+  top: 0;
 }
 
 p {
   margin: 0;
 }
 
-#__next {
+/* #__next {
   position: absolute;
   height: 100%;
   width: 100%;
-}
+} */
