@@ -4,12 +4,13 @@ import Layout from '../components/layout';
 import { Grid, ImgWrapperModal } from '../styles/GridStyles';
 import Image from 'next/image';
 import { Modal, ModalBody, ModalCloseButton, ModalContent, ModalOverlay, useDisclosure } from '@chakra-ui/react';
-import { IconChevronLeft, IconChevronRight } from '@tabler/icons';
 // import { CMS_NAME } from '../lib/constants'
 import { indexQuery } from '../lib/queries'
 import { usePreviewSubscription } from '../lib/sanity'
 import { getClient, overlayDrafts } from '../lib/sanity.server'
 import { urlForImage } from '../lib/sanity'
+import { MyImage } from '../components/myImage';
+
 
 
 const Photo = ({ allPhotos: initialAllPhotos, preview }) => {
@@ -40,12 +41,12 @@ const Photo = ({ allPhotos: initialAllPhotos, preview }) => {
           {morePhotos.length > 0 &&
             morePhotos.map((photo) => (
               <div key={photo.slug} onClick={() => onClickHandler(photo)}>
-                <Image
+                <MyImage
                   src={urlForImage(photo.coverImage).url()}
-                  layout='fill'
-                  objectFit='cover'
-                  quality='100'
-                  sizes="(min-width: 768px) 50vw, 100vw"
+                  // layout='fill'
+                  // objectFit='cover'
+                  // quality='100'
+                  // sizes="(min-width: 768px) 50vw, 100vw"
                   alt={photo.title} />
               </div>
             ))}
