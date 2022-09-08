@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Skeleton, Spinner } from '../styles/MyImageStyles';
+import { Skeleton2 } from '../styles/MyImageStyles';
 
 export const MyImage = ({ css, ...props }) => {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -8,7 +8,7 @@ export const MyImage = ({ css, ...props }) => {
     return (
         <>
             <div style={{ width: '100%', height: '100%' }}>
-                {!isLoaded && <Spinner />}
+                {!isLoaded && <Skeleton2/>}
                 <Image
                     layout='fill'
                     objectFit='cover'

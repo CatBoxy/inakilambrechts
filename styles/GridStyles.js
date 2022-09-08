@@ -6,11 +6,7 @@ export const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 10px;
-  div {
-    width: 100%;
-    min-height: 215px;
-    position: relative;
-  }
+
   img {
     transition: 2.5s all cubic-bezier(0.14, 0.4, 0.09, 0.99);
     cursor: pointer;
@@ -57,3 +53,9 @@ export const ImgWrapperModal = styled.div`
     display: block;
   }
 `;
+
+export const GridChild = styled.div`
+  width: 100%;
+  min-height: 215px;
+  position: relative;
+`

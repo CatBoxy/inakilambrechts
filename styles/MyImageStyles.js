@@ -36,60 +36,64 @@ export const Skeleton = styled.div`
   }
 `;
 
-const spinnerSpin = keyframes`
+const anim = keyframes`
+  0% {
+    opacity:0.0;
+    width:0vmin;
+    height:0vmin;
+  }
+  10% {
+    opacity:0.2;
+  }
+  100% {
+    opacity:0.0;
+    width:100vmin;
+    height:100vmin;
+  }
+` 
 
-100% {
-      transform: rotate(360deg);
-    }
-`;
-const spinnerFade = keyframes`
-    20% {
-      opacity: .1;
-    }
-    40% {
-      opacity: 1;
-    }
-    60% {
-      opacity: .1;
-    }
-`;
+export const Loader = styled.div`
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:0px;
+  height:0px;
+  border-radius:100%;
+  opacity:0;
+  border:1px solid white;
+  animation:${anim} 4s infinite linear;
+` 
+  
+const placeHolderShimmer = keyframes`
+0% {
+    background-position: -468px 0
+  }
+  100% {
+    background-position: 468px 0
+  }
+`  
 
-export const Spinner = styled.div`
+export const Skeleton2 = styled.div`
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-name: ${placeHolderShimmer};
+  -webkit-animation-timing-function: linear;
+  background: #50535a;
+  background-image: linear-gradient(to right, #50535a 0%, #656871 20%, #50535a 40%, #50535a 100%);
+  background-repeat: no-repeat;
+  /* background-size: 800px 104px; */
+  height: 104px;
   position: relative;
-  margin: auto;
-  box-sizing: border-box;
-  background-clip: padding-box;
-  width: 200px;
-  height: 200px;
-  border-radius: 100px;
-  border: 4px solid rgba(255, 255, 255, 0.1);
-  -webkit-mask: linear-gradient(rgba(0, 0, 0, 0.1), #000000 90%);
-  transform-origin: 50% 60%;
-  transform: perspective(200px) rotateX(66deg);
-  animation: spinner-wiggle 1.2s infinite;
 
-  &::before,
-  &::after {
-    content: "";
+  div {
+    background-color: #313236;
     position: absolute;
-    margin: -4px;
-    box-sizing: inherit;
-    width: inherit;
-    height: inherit;
-    border-radius: inherit;
-    opacity: 0.05;
-    border: inherit;
-    border-color: transparent;
-    animation: ${spinnerSpin} 1.2s cubic-bezier(0.6, 0.2, 0, 0.8) infinite,
-      ${spinnerFade} 1.2s linear infinite;
+    height: 40px;
+    left: 40px;
+    right: auto;
+    top: 0;
+    width: 8px;
   }
-
-  &::before {
-    border-top-color: #ffffff;
-  }
-
-  &::after {
-    border-top-color: #ffffff;
-    animation-delay: 0.3s;
-  }
-`;
+`

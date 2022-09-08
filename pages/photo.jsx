@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../components/header';
 import Layout from '../components/layout';
-import { Grid, ImgWrapperModal } from '../styles/GridStyles';
+import { Grid, ImgWrapperModal, GridChild } from '../styles/GridStyles';
 import Image from 'next/image';
 import { Modal, ModalBody, ModalCloseButton, ModalContent, ModalOverlay, useDisclosure } from '@chakra-ui/react';
 // import { CMS_NAME } from '../lib/constants'
@@ -40,7 +40,7 @@ const Photo = ({ allPhotos: initialAllPhotos, preview }) => {
         <Grid>
           {morePhotos.length > 0 &&
             morePhotos.map((photo) => (
-              <div key={photo.slug} onClick={() => onClickHandler(photo)}>
+              <GridChild key={photo.slug} onClick={() => onClickHandler(photo)} style={{overflow: 'hidden'}}>
                 <MyImage
                   src={urlForImage(photo.coverImage).url()}
                   // layout='fill'
@@ -48,7 +48,7 @@ const Photo = ({ allPhotos: initialAllPhotos, preview }) => {
                   // quality='100'
                   // sizes="(min-width: 768px) 50vw, 100vw"
                   alt={photo.title} />
-              </div>
+              </GridChild>
             ))}
         </Grid>
       </Layout>
