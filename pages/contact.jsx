@@ -25,10 +25,10 @@ const Contact = () => (
             alt=''
           />
           <div className='content'>
-            <div className='mainText'>
-              <h1 className='title'>GET IN TOUCH</h1>
-              <div className="boxes">
-                <div className='styledBox' id='infoBox'>
+
+              {/* <h1 className='title'>GET IN TOUCH</h1> */}
+              
+                {/* <div className='styledBox' id='infoBox'>
                   <div className="icons">
                     <IconBox>
                       <IconBrandInstagram stroke={1.5} size={'32px'} />
@@ -50,26 +50,24 @@ const Contact = () => (
                     of thousands inconspicuous motes of rock and gas bits of moving fluff
                     shores of the.
                   </div>
-                </div>
+                </div> */}
                 <div className='styledBox' id='formBox'>
                   <ContactForm />
+                  <div className='footerIcons'>
+                    <IconBox>
+                      <IconBrandInstagram stroke={1.5} size={'32px'} />
+                    </IconBox>
+                    <IconBox>
+                      <IconBrandTwitter stroke={1.5} size={'32px'} />
+                    </IconBox>
+                    <IconBox>
+                      <IconBrandYoutube stroke={1.5} size={'32px'} />
+                    </IconBox>
+                    <IconBox>
+                      <IconBrandLinkedin stroke={1.5} size={'32px'} />
+                    </IconBox>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className='footerIcons'>
-              <IconBox>
-                <IconBrandInstagram stroke={1.5} size={'32px'} />
-              </IconBox>
-              <IconBox>
-                <IconBrandTwitter stroke={1.5} size={'32px'} />
-              </IconBox>
-              <IconBox>
-                <IconBrandYoutube stroke={1.5} size={'32px'} />
-              </IconBox>
-              <IconBox>
-                <IconBrandLinkedin stroke={1.5} size={'32px'} />
-              </IconBox>
-            </div>
           </div>
         </div>
       </ContactBody>

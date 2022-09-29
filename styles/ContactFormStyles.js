@@ -5,13 +5,14 @@ export const Container = styled.div`
   form {
     width: 100%;
     height: 100%;
-    padding-top: 21px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
   .buttonContainer {
-    margin-top: 10px;
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
     display: flex;
     justify-content: flex-end;
   }
@@ -49,10 +50,10 @@ export const InputWrapper = styled.div`
     font-family: inherit;
     font-size: inherit;
   }
-
-  textarea{
-    min-height: 300px;
+  textarea {
+    height: 70px;
   }
+
 
   input::placeholder,
   textarea::placeholder {
@@ -60,9 +61,7 @@ export const InputWrapper = styled.div`
   }
 
   ${(props) => (props.theme.media.tablet)} {
-    textarea{
-      min-height: 150px;
-    }
+
     form {
       padding-top: 0;
     }

@@ -23,36 +23,33 @@ const About = () => (
             alt=''
           />
           <div className='content'>
-            <div className='mainText'>
-              <h1 className='title'>ABOUT IÑAKI</h1>
+
+              {/* <h1 className='title'>ABOUT IÑAKI</h1> */}
               <div className='styledBox'>
                 <p>
-                  Across the centuries something incredible is waiting to be
-                  known tendrils of gossamer clouds finite but unbounded stirred
-                  by starlight white dwarf. Brain is the seed of intelligence hundreds
-                  of thousands inconspicuous motes of rock and gas bits of moving fluff
-                  shores of the cosmic ocean Jean-François Champollion? Two ghostly white
-                  figures in coveralls and helmets are softly dancing courage of our
-                  questions gathered by gravity made in the interiors of collapsing
-                  stars from which we spring hearts of the stars and billions upon
-                  billions upon billions upon billions upon billions upon billions
-                  upon billions.
+                  Hey. Welcome. My name is Iñaki.
+                  I'm a Photographer and Aspiring Film Director from Argentina.
+                  I'm currently based in Wellington, New Zealand.
+                  I've made a few short films and am trying to find my way into the Storytelling Industry.
                 </p>
                 <p>
-                  Across the centuries something incredible is waiting to be
-                  known tendrils of gossamer clouds finite but unbounded stirred
-                  by starlight white dwarf. Brain is the seed of intelligence hundreds
-                  of thousands inconspicuous motes of rock and gas bits of moving fluff
-                  shores of the cosmic ocean Jean-François Champollion? Two ghostly white
-                  figures in coveralls and helmets are softly dancing courage of our
-                  questions gathered by gravity made in the interiors of collapsing
-                  stars from which we spring hearts of the stars and billions upon
-                  billions upon billions upon billions upon billions upon billions
-                  upon billions.
+                  I have a deep love for Science Fiction and Fantasy related content, such as novels, movies, and podcasts.
+                  My biggest influences are absolute masters of the craft.
+                  Denis Villeneuve, Roger Deakins, Robert Eggers, J.R.R Tolkien, Hans Zimmer, just to name a few. 
+                </p>
+                <p>
+                  There is nothing I enjoy more than working with a team of creatives with one objective in mind that does their absolute best to accomplish it.
+                  And honestly, I feel more than capable of leading one.
+                  I would never discard an idea without discussing it before.
+                  I value respect and companionship above everything else.
+                  And I believe that for great results, dedication and patience are essential. 
+                </p>
+                <p>
+                  Feel free to contact me, let's work together.
                 </p>
               </div>
-            </div>
-            <div className='footerIcons'>
+
+            {/* <div className='footerIcons'>
               <IconBox>
                 <IconBrandInstagram stroke={1.5} size={'32px'} />
               </IconBox>
@@ -65,7 +62,7 @@ const About = () => (
               <IconBox>
                 <IconBrandLinkedin stroke={1.5} size={'32px'} />
               </IconBox>
-            </div>
+            </div> */}
           </div>
         </div>
       </AboutBody>
