@@ -18,7 +18,7 @@ const Header = () => {
       <NavContainer>
         <nav>
           <NavWrapper className='smDisplay'>
-            <h2>[{formattedLocation}]</h2>
+            <h2>{formattedLocation}</h2>
           </NavWrapper>
           <NavWrapper justify='title' className='smDisplay'>
             <h2 className='name'>IÑAKI LAMBRECHTS</h2>
