@@ -21,13 +21,27 @@ const ContactForm = () => {
     });
 
   const onSubmit = () => {
-    console.log({
+    let message = {
       message: {
         message: values.message,
         name: values.name,
         email: values.email,
+      }
+    }
+    console.log(message);
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
       },
-    });
+      body: JSON.stringify(message)
+    }).then((res) => {
+      console.log('Response received')
+      if (res.status === 200) {
+        console.log('Response succeeded!')
+      }
+    })
   };
 
   const formik = useFormik({ initialValues, validationSchema, onSubmit });

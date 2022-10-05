@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ContactBody = styled.main`
-  height: 910px;
+  height: calc(100vh - 88px);
   width: 100%;
   .bgWrapper {
     height: 100%;
@@ -12,12 +12,13 @@ export const ContactBody = styled.main`
   }
   .content {
     position: absolute;
-    padding: 88px 32px 0 32px;
+    padding: 0 32px 0 32px;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
     background-color: rgba(0,0,0,.2);
     
   }
@@ -33,12 +34,16 @@ export const ContactBody = styled.main`
     align-items: center;
   }
   .styledBox {
+    position: relative;
     background-color: rgba(0, 0, 0, .5);
     border: ${(props) => (props.theme.border.primary)};
     border-radius: ${(props) => (props.theme.borderRadius.primary)};
     width: 100%;
+    max-width: 704px;
+    max-height: 350px;
+    min-height: 350px;
     padding: 16px;
-    margin-bottom: 32px;
+    /* margin-bottom: 32px; */
     color: ${(props) => (props.theme.colors.primary)};
     font-size: large;
     display: flex;
@@ -49,6 +54,10 @@ export const ContactBody = styled.main`
     display: none;
   }
   .footerIcons {
+    position: absolute;
+    bottom: -96px;
+    left: 0px;
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -63,9 +72,7 @@ export const ContactBody = styled.main`
     margin: 72px 0 ;
   }
   ${(props) => (props.theme.media.tablet)} {
-    height: 885px;
     .content {
-      justify-content: space-between;
       height: 100%;
       padding: 0 32px 0 32px;
     }
@@ -74,12 +81,10 @@ export const ContactBody = styled.main`
     }
     .styledBox {
       flex-direction: row;
-      padding: 62px 32px;
-      
     }
-    .footerIcons {
+    /* .footerIcons {
       display: none;
-    }
+    } */
     .boxes {
     display: flex;
     gap: 4%;
