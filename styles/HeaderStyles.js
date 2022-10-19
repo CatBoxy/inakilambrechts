@@ -1,9 +1,9 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const NavContainer = styled.div`
-  font-size:20px;
-  background-color: ${(props) => (props.theme.colors.transparent)};
-  color: ${(props) => (props.theme.colors.primary)};
+  font-size: 20px;
+  background-color: ${(props) => props.theme.colors.transparent};
+  color: ${(props) => props.theme.colors.primary};
   width: 100%;
   nav {
     display: flex;
@@ -24,19 +24,18 @@ export const NavContainer = styled.div`
     display: none;
   }
 
-  ${(props) => (props.theme.media.tablet)} {
-
+  ${(props) => props.theme.media.tablet} {
     h2 {
       font-size: 20px;
     }
-    
+
     .smDisplay {
       display: none;
     }
     .mdDisplay {
       display: flex;
     }
-   }
+  }
 `;
 export const ListWrapper = styled.div`
   display: flex;
@@ -52,19 +51,27 @@ export const ListWrapper = styled.div`
     height: 100%;
     gap: 32px;
   }
+
+  .active {
+    font-weight: 600;
+  }
+
+  p {
+    cursor: pointer;
+  }
 `;
 
 export const NavWrapper = styled.div`
-  width: ${(props) => props.width ? props.width : '100%'};
+  width: ${(props) => (props.width ? props.width : "100%")};
   display: flex;
   justify-content: ${(props) => {
     switch (props.justify) {
-      case 'icon':
-        return 'flex-end';
-      case 'title':
-        return 'center';
+      case "icon":
+        return "flex-end";
+      case "title":
+        return "center";
       default:
-        return 'none';
+        return "none";
     }
-  }}       
+  }};
 `;

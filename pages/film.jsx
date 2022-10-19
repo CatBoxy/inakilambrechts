@@ -20,20 +20,14 @@ const Film = () => {
       <Layout padding='0'>
         <Grid>
           <GridChild style={{ color: "white" }}>
-            <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/X5zRsAaI5ck?" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe>
+            <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/X5zRsAaI5ck?" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true}></iframe>
           </GridChild>
           <GridChild>
-            <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/LSmrrYl4cdQ?" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe>
+            <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/LSmrrYl4cdQ?" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true}></iframe>
           </GridChild>
           <GridChild>
-            <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/KPZISGciOG4?" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe>
+            <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/KPZISGciOG4?" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true}></iframe>
           </GridChild>
-          {/* <GridChild>
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/BRc_fDk92qQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe>
-          </GridChild>
-          <GridChild>
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/5KykxzewwFI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe>
-          </GridChild> */}
         </Grid>
       </Layout>
     </div>

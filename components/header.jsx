@@ -41,16 +41,32 @@ const Header = () => {
                   <ListWrapper >
                     <ul >
                       <li onClick={onClose}>
-                        <Link href={'/film'}>{location === '/film' ? '[FILM]' : 'FILM'}</Link>
+                        <Link href={'/film'}>
+                          <p className={location === '/film' ? 'active' : ''}>
+                            FILM
+                          </p>
+                        </Link>
                       </li>
                       <li onClick={onClose}>
-                        <Link href={'/photo'}>{location === '/photo' ? '[PHOTO]' : 'PHOTO'}</Link>
+                        <Link href={'/photo'}>
+                          <p className={location === '/photo' ? 'active' : ''}>
+                            PHOTO
+                          </p>
+                        </Link>
                       </li>
                       <li onClick={onClose}>
-                        <Link href={'/contact'}>{location === '/contact' ? '[GET IN TOUCH]' : 'GET IN TOUCH'}</Link>
+                        <Link href={'/contact'}>
+                          <p className={location === '/contact' ? 'active' : ''}>
+                            GET IN TOUCH
+                          </p>
+                        </Link>
                       </li>
                       <li onClick={onClose}>
-                        <Link href={'/about'}>{location === '/about' ? '[ABOUT]' : 'ABOUT'}</Link>
+                        <Link href={'/about'}>
+                          <p className={location === '/about' ? 'active' : ''}>
+                            ABOUT
+                          </p>
+                        </Link>
                       </li>
                     </ul>
                   </ListWrapper>

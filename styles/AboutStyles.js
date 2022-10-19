@@ -36,6 +36,16 @@ export const AboutBody = styled.main`
     flex-direction: column;
     gap: 32px;
   }
+
+  .styledBox > p {
+    text-align: justify;
+  }
+
+  .contactLink {
+    cursor: pointer;
+    text-decoration-line: underline;
+  }
+
   .styledBox::-webkit-scrollbar {
     display: none;
   }

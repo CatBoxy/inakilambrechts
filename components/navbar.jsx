@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { ListContainer } from '../styles/NavStyles';
+import { NavItem } from '../styles/NavStyles';
 
 const Navbar = (location) => {
   const [currentPath, setCurrentPath] = useState();
-
   useEffect(() => {
     if (location) {
       setCurrentPath(location);
@@ -15,16 +15,32 @@ const Navbar = (location) => {
     <ListContainer>
       <ul>
         <li>
-          <Link href={'/film'}>{currentPath?.location === '/film' ? '[FILM]' : 'FILM'}</Link>
+          <Link href={'/film'}>
+            <p className={location.location === '/film' ? 'active' : ''}>
+              FILM
+            </p>
+          </Link>
         </li>
         <li>
-          <Link href={'/photo'}>{currentPath?.location === '/photo' ? '[PHOTO]' : 'PHOTO'}</Link>
+          <Link href={'/photo'}>
+            <p className={location.location === '/photo' ? 'active' : ''}>
+              PHOTO
+            </p>
+          </Link>
         </li>
         <li>
-          <Link href={'/contact'}>{currentPath?.location === '/contact' ? '[GET IN TOUCH]' : 'GET IN TOUCH'}</Link>
+          <Link href={'/contact'}>
+            <p className={location.location === '/contact' ? 'active' : ''}>
+              GET IN TOUCH
+            </p>
+          </Link>
         </li>
         <li>
-          <Link href={'/about'}>{currentPath?.location === '/about' ? '[ABOUT]' : 'ABOUT'}</Link>
+          <Link href={'/about'}>
+            <p className={location.location === '/about' ? 'active' : ''}>
+              ABOUT
+            </p>
+          </Link>
         </li>
       </ul>
     </ListContainer>
