@@ -25,9 +25,9 @@ const Contact = () => (
             alt=''
           />
           <div className='content'>
-                <div className='styledBox' id='formBox'>
-                  <ContactForm />
-                  <div className='footerIcons'>
+            <div className='styledBox' id='formBox'>
+              <ContactForm />
+              {/* <div className='footerIcons'>
                     <IconBox>
                       <IconBrandInstagram stroke={1.5} size={'32px'} />
                     </IconBox>
@@ -40,8 +40,8 @@ const Contact = () => (
                     <IconBox>
                       <IconBrandLinkedin stroke={1.5} size={'32px'} />
                     </IconBox>
-                  </div>
-                </div>
+                  </div> */}
+            </div>
           </div>
         </div>
       </ContactBody>

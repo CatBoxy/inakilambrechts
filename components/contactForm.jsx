@@ -2,6 +2,9 @@ import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { Container, InputWrapper } from '../styles/ContactFormStyles';
+import { IconBrandYoutube, IconBrandInstagram } from '@tabler/icons';
+
+import Link from 'next/link'
 
 const ContactForm = () => {
 
@@ -97,6 +100,23 @@ const ContactForm = () => {
           </div>
           <div className="buttonContainer">
             <button type="submit">SEND</button>
+          </div>
+          <div className="iconsContainer">
+            <a href="https://www.youtube.com/c/HelderlandPictures" target="_blank" rel="noreferrer">
+              <IconBrandYoutube stroke={1.5} size={'32px'} />
+            </a>
+            <a href="https://vero.co/ilamb_" target="_blank" rel="noreferrer">
+              <img
+                src="/VERO_Icon_Regular_White.svg"
+                quality='100'
+                height={32}
+                width={32}
+                alt=''
+              />
+            </a>
+            <a href="https://instagram.com/ilambb_?igshid=YmMyMTA2M2Y=" target="_blank" rel="noreferrer">
+              <IconBrandInstagram stroke={1.5} size={'32px'} />
+            </a>
           </div>
         </form>
       </Container>

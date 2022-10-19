@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const ContactBody = styled.main`
   height: calc(100vh - 88px);
@@ -8,7 +8,7 @@ export const ContactBody = styled.main`
     width: 100%;
     position: relative;
     overflow: hidden;
-    background-color: rgba(0,0,0,.5);
+    background-color: rgba(0, 0, 0, 0.5);
   }
   .content {
     position: absolute;
@@ -19,8 +19,7 @@ export const ContactBody = styled.main`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0,0,0,.2);
-    
+    background-color: rgba(0, 0, 0, 0.2);
   }
   .icons {
     display: flex;
@@ -35,16 +34,16 @@ export const ContactBody = styled.main`
   }
   .styledBox {
     position: relative;
-    background-color: rgba(0, 0, 0, .5);
-    border: ${(props) => (props.theme.border.primary)};
-    border-radius: ${(props) => (props.theme.borderRadius.primary)};
+    background-color: rgba(0, 0, 0, 0.5);
+    border: ${(props) => props.theme.border.primary};
+    border-radius: ${(props) => props.theme.borderRadius.primary};
     width: 100%;
     max-width: 704px;
-    max-height: 350px;
-    min-height: 350px;
+    max-height: 360px;
+    min-height: 360px;
     padding: 16px;
     /* margin-bottom: 32px; */
-    color: ${(props) => (props.theme.colors.primary)};
+    color: ${(props) => props.theme.colors.primary};
     font-size: large;
     display: flex;
     flex-direction: column;
@@ -62,16 +61,16 @@ export const ContactBody = styled.main`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    color: ${(props) => (props.theme.colors.primary)};
+    color: ${(props) => props.theme.colors.primary};
     min-height: 80px;
   }
   .title {
     display: none;
-    color: ${(props) => (props.theme.colors.primary)};
+    color: ${(props) => props.theme.colors.primary};
     font-size: 48px;
-    margin: 72px 0 ;
+    margin: 72px 0;
   }
-  ${(props) => (props.theme.media.tablet)} {
+  ${(props) => props.theme.media.tablet} {
     .content {
       height: 100%;
       padding: 0 32px 0 32px;
@@ -86,12 +85,12 @@ export const ContactBody = styled.main`
       display: none;
     } */
     .boxes {
-    display: flex;
-    gap: 4%;
-  }
-  #infoBox {
-    display: flex;
-  }
+      display: flex;
+      gap: 4%;
+    }
+    #infoBox {
+      display: flex;
+    }
   }
   @media (min-width: 1200px) {
     .boxes {
