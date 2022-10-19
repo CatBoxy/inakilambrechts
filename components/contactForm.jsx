@@ -4,7 +4,6 @@ import * as Yup from 'yup';
 import { Container, InputWrapper } from '../styles/ContactFormStyles';
 import { IconBrandYoutube, IconBrandInstagram } from '@tabler/icons';
 
-import Link from 'next/link'
 
 const ContactForm = () => {
 
