@@ -80,6 +80,8 @@ export const ContactBody = styled.main`
     }
     .styledBox {
       flex-direction: row;
+      max-height: 100%;
+      min-height: 444px;
     }
     /* .footerIcons {
       display: none;
