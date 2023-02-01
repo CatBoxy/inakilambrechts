@@ -32,7 +32,7 @@ const Photo = ({ allPhotos: initialAllPhotos, preview }) => {
   const [...morePhotos] = allPhotos || []
 
   return (
-    <div style={{ backgroundColor: 'black', height: '100vh' }}>
+    <div style={{ backgroundColor: 'black' }}>
       <Layout height='88px' sticky={true}>
         <Header />
       </Layout>

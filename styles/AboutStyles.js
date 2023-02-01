@@ -72,10 +72,9 @@ export const AboutBody = styled.main`
     .title {
       display: block;
     }
-    /* .styledBox {
-      flex-direction: row;
-      padding: 62px 32px;
-    } */
+    .styledBox {
+      max-height: 100%;
+    }
     .footerIcons {
       justify-content: center;
       gap: 8px;
