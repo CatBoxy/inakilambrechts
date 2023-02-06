@@ -12,7 +12,7 @@ const Home = () => (
         </div>
       </Link>
       <footer>
-        <p>Director | Photographer</p>
+        <p>DoP | Photographer</p>
       </footer>
     </Section>
   </MainContainer>
