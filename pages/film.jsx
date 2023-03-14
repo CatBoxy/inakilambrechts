@@ -23,9 +23,6 @@ const Film = () => {
             <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/X5zRsAaI5ck?" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true}></iframe>
           </GridChild>
           <GridChild>
-            <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/LSmrrYl4cdQ?" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true}></iframe>
-          </GridChild>
-          <GridChild>
             <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/KPZISGciOG4?" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true}></iframe>
           </GridChild>
         </Grid>
