@@ -26,22 +26,13 @@ const About = () => (
             {/* <h1 className='title'>ABOUT IÑAKI</h1> */}
             <div className='styledBox'>
               <p>
-                Hey. Welcome. My name is Iñaki.
-                I'm a Photographer and Aspiring Film Director from Argentina.
-                I'm currently based in Wellington, New Zealand.
-                I've made a few short films and am trying to find my way into the Storytelling Industry.
+                Hey. Welcome. My name is Iñaki. I'm an aspiring cinematographer from Argentina. I'm currently based in Wellington, New Zealand. I've been shooting indie short films for 3 years and am trying to find my way into the Storytelling Industry.
               </p>
               <p>
-                I have a deep love for Science Fiction and Fantasy related content, such as novels, movies, and podcasts.
-                My biggest influences are absolute masters of the craft.
-                Denis Villeneuve, Roger Deakins, Robert Eggers, J.R.R Tolkien, Hans Zimmer, just to name a few.
+                I have a deep love for Science Fiction, Fantasy and Drama. There’s nothing like innovative world-building and truthful characters. But in the end, it’s always about telling a good story. My biggest influences are absolute masters of the craft. Denis Villeneuve, Roger Deakins, Robert Eggers, J.R.R Tolkien, Hans Zimmer, just to name a few.
               </p>
               <p>
-                There is nothing I enjoy more than working with a team of creatives with one objective in mind that does their absolute best to accomplish it.
-                And honestly, I feel more than capable of leading one.
-                I would never discard an idea without discussing it before.
-                I value respect and companionship above everything else.
-                And I believe that for great results, dedication and patience are essential.
+                There is nothing I enjoy more than working with a team of creatives with one objective in mind, doing their absolute best to accomplish it. I value respect and companionship above everything else. I would never discard an idea without discussing it before. And I believe that for great results, dedication and patience are essential.
               </p>
               <Link href={"/contact"}>
                 <p className='contactLink'>
