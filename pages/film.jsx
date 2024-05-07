@@ -2,7 +2,7 @@ import React from 'react';
 import { useRef } from 'react';
 import Header from '../components/header';
 import Layout from '../components/layout';
-import { Grid, GridChild } from '../styles/GridStyles';
+// import { Grid, GridChild } from '../styles/GridStyles';
 // import { IFrameRenderer } from '../components/iframeRenderer';
 // import { useIsIFrameLoaded } from '../hooks/useIsFrameLoadedHook';
 
